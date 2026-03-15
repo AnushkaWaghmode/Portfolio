@@ -1185,6 +1185,41 @@ body.cursor-ready .cursor-dot { opacity: 1; }
   .edu-body { padding-right: 70px; }
 }
 
+@media (hover: none) {
+  .projects-layout { display: grid; gap: 12px; }
+  .project-list { border-top: 0; }
+  .project-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    margin-bottom: 6px;
+  }
+  .project-item::before { display: none; }
+  .project-item:hover { padding-left: 0; }
+  .project-item:hover .project-arrow { transform: none; color: var(--text-faint); }
+  .project-item:hover .project-name { color: var(--text); }
+  .project-item.active {
+    border-color: rgba(232,201,126,0.28);
+    background: rgba(232,201,126,0.04);
+  }
+  .project-item.active .project-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+  .project-preview {
+    position: relative;
+    width: 100%;
+    opacity: 1;
+    transform: none;
+    display: none;
+    pointer-events: auto;
+    box-shadow: none;
+    margin: 6px 0 14px;
+  }
+  .project-preview.active { display: block; }
+  .preview-img { height: auto; }
+}
+
 @media (max-width: 480px) {
   .hero-name { font-size: clamp(4rem, 18vw, 6rem); }
   .section-heading { font-size: clamp(2.5rem, 12vw, 4rem); }

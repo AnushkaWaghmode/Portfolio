@@ -269,8 +269,10 @@ if (cgpaWrap) {
 /* ════════════════════════════════════
    7. PROJECT HOVER PREVIEW
 ════════════════════════════════════ */
-const projectItems = document.querySelectorAll('.project-item');
-const previewCards = document.querySelectorAll('.project-preview');
+const projectItems   = document.querySelectorAll('.project-item');
+const previewCards   = document.querySelectorAll('.project-preview');
+const projectsHint   = document.querySelector('.projects-hint');
+const supportsHover  = window.matchMedia('(hover: hover)').matches;
 const previewMap = {
   steampunk:    document.getElementById('previewSteampunk'),
   loadbalancer: document.getElementById('previewLoadbalancer'),
@@ -278,6 +280,10 @@ const previewMap = {
   idp:          document.getElementById('previewIdp'),
 };
 let previewTimeout = null;
+
+if (projectsHint && !supportsHover) {
+  projectsHint.textContent = 'Tap a project to open its GitHub page';
+}
 
 function positionPreview(card, x, y) {
   const cardW = 340, margin = 20;
@@ -292,7 +298,16 @@ function positionPreview(card, x, y) {
   card.style.top  = top  + 'px';
 }
 
-if (window.matchMedia('(hover: hover)').matches) {
+if (!supportsHover) {
+  // On touch devices (no hover), open the GitHub page directly in a new tab.
+  projectItems.forEach(item => {
+    const card = previewMap[item.dataset.project];
+    const link = card ? card.querySelector('.preview-btn') : null;
+    item.addEventListener('click', () => {
+      if (link && link.href) window.open(link.href, '_blank', 'noopener');
+    });
+  });
+} else if (supportsHover) {
   projectItems.forEach(item => {
     const card = previewMap[item.dataset.project];
     item.addEventListener('mouseenter', (e) => {
@@ -310,6 +325,22 @@ if (window.matchMedia('(hover: hover)').matches) {
   previewCards.forEach(card => {
     card.addEventListener('mouseenter', () => { clearTimeout(previewTimeout); card.classList.add('active'); });
     card.addEventListener('mouseleave', () => { previewTimeout = setTimeout(() => card.classList.remove('active'), 150); });
+  });
+} else {
+  projectItems.forEach(item => {
+    const card = previewMap[item.dataset.project];
+    item.addEventListener('click', () => {
+      const alreadyActive = card && card.classList.contains('active');
+      previewCards.forEach(c => c.classList.remove('active'));
+      projectItems.forEach(i => i.classList.remove('active'));
+      if (card && !alreadyActive) {
+        card.classList.add('active');
+        item.classList.add('active');
+        // Move the preview directly under the tapped item so it feels attached.
+        item.insertAdjacentElement('afterend', card);
+        requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' }));
+      }
+    });
   });
 }
 
