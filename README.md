@@ -14,7 +14,7 @@ Aspiring Software Development Engineer passionate about building interactive app
 ## 📊 Academics
 CGPA Progress:
 - Sem 1 — 7.76  
-- Sem 2 — 8.23  
+- Sem 2 — 8.18  
 - Sem 3 — 9.73  
 
 ## 🏆 Achievements
