@@ -15,7 +15,8 @@ Aspiring Software Development Engineer passionate about building interactive app
 CGPA Progress:
 - Sem 1 — 7.76  
 - Sem 2 — 8.18  
-- Sem 3 — 9.73  
+- Sem 3 — 9.73
+- Sem 4 - 9.74
 
 ##  Achievements
 - Runner-Up — Animated Short Film (College TechFest)
