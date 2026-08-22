@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="Style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
 <body class="intro-active">
 
@@ -126,7 +126,7 @@
           </p>
           <div class="about-stats reveal">
             <div class="stat">
-              <span class="stat-num">3</span>
+              <span class="stat-num">4</span>
               <span class="stat-label">Semesters<br>Completed</span>
             </div>
             <div class="stat">
@@ -134,7 +134,7 @@
               <span class="stat-label">Projects<br>Built</span>
             </div>
             <div class="stat">
-              <span class="stat-num">9.73</span>
+              <span class="stat-num">9.74</span>
               <span class="stat-label">Best Semester<br>CGPA</span>
             </div>
           </div>
@@ -193,25 +193,25 @@
           <li class="project-item reveal" data-project="steampunk">
             <span class="project-index">01</span>
             <span class="project-name">Steampunk Shooter Adventure Game</span>
-            <span class="project-arrow">→</span>
+            <a class="project-arrow-link" href="https://github.com/AnushkaWaghmode/Steampunk-Shooter-Game" target="_blank" rel="noopener" aria-label="View Steampunk Shooter Adventure Game on GitHub"><span class="project-arrow">→</span></a>
           </li>
 
           <li class="project-item reveal" data-project="loadbalancer">
             <span class="project-index">02</span>
             <span class="project-name">Load Balancer</span>
-            <span class="project-arrow">→</span>
+            <a class="project-arrow-link" href="https://github.com/AnushkaWaghmode/Load-Balancer" target="_blank" rel="noopener" aria-label="View Load Balancer on GitHub"><span class="project-arrow">→</span></a>
           </li>
 
           <li class="project-item reveal" data-project="portfolio">
             <span class="project-index">03</span>
             <span class="project-name">Portfolio Website</span>
-            <span class="project-arrow">→</span>
+            <a class="project-arrow-link" href="https://github.com/AnushkaWaghmode/Portfolio" target="_blank" rel="noopener" aria-label="View Portfolio Website on GitHub"><span class="project-arrow">→</span></a>
           </li>
 
           <li class="project-item reveal" data-project="idp">
             <span class="project-index">04</span>
             <span class="project-name">IDP — Intelligent Recommendation System</span>
-            <span class="project-arrow">→</span>
+            <a class="project-arrow-link" href="https://github.com/AnushkaWaghmode/IDP" target="_blank" rel="noopener" aria-label="View IDP Intelligent Recommendation System on GitHub"><span class="project-arrow">→</span></a>
           </li>
 
         </ul>
@@ -238,7 +238,7 @@
             <div class="preview-tags">
               <span>JavaScript</span><span>HTML5 Canvas</span><span>CSS3</span>
             </div>
-            <a href="https://github.com/AnushkaWaghmode" target="_blank" class="preview-btn">View on GitHub →</a>
+            <a href="https://github.com/AnushkaWaghmode/Steampunk-Shooter-Game" target="_blank" class="preview-btn">View on GitHub →</a>
           </div>
         </div>
 
@@ -374,9 +374,10 @@
                 <feGaussianBlur stdDeviation="8" result="blur"/>
                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <clipPath id="bar1Clip"><rect id="bar1ClipRect" x="140" y="260" width="80" height="0" rx="4"/></clipPath>
-              <clipPath id="bar2Clip"><rect id="bar2ClipRect" x="310" y="260" width="80" height="0" rx="4"/></clipPath>
-              <clipPath id="bar3Clip"><rect id="bar3ClipRect" x="480" y="260" width="80" height="0" rx="4"/></clipPath>
+              <clipPath id="bar1Clip"><rect id="bar1ClipRect" x="100" y="260" width="70" height="0" rx="4"/></clipPath>
+              <clipPath id="bar2Clip"><rect id="bar2ClipRect" x="267" y="260" width="70" height="0" rx="4"/></clipPath>
+              <clipPath id="bar3Clip"><rect id="bar3ClipRect" x="433" y="260" width="70" height="0" rx="4"/></clipPath>
+              <clipPath id="bar4Clip"><rect id="bar4ClipRect" x="600" y="260" width="70" height="0" rx="4"/></clipPath>
             </defs>
 
             <!-- Grid lines -->
@@ -395,43 +396,47 @@
             <text x="68" y="244" text-anchor="end" fill="rgba(255,255,255,0.2)" font-family="Space Mono,monospace" font-size="10">6</text>
 
             <!-- Bars (filled via JS animation using clipPath) -->
-            <!-- Bar 1 – Sem 1: 7.76 → y = 260 - (7.76-6)/4 * 220 = 260 - 96.8 = 163.2, h=96.8 -->
-            <rect x="140" y="40" width="80" height="220" rx="4" fill="url(#barGrad1)" opacity="0.08"/>
-            <rect id="bar1" x="140" width="80" rx="4" fill="url(#barGrad1)" clip-path="url(#bar1Clip)"/>
+            <!-- Bars are filled via JavaScript animation using clip paths. -->
+            <rect x="100" y="40" width="70" height="220" rx="4" fill="url(#barGrad1)" opacity="0.08"/>
+            <rect id="bar1" x="100" width="70" rx="4" fill="url(#barGrad1)" clip-path="url(#bar1Clip)"/>
 
-            <!-- Bar 2 – Sem 2: 8.18 → h=123.15 -->
-            <rect x="310" y="40" width="80" height="220" rx="4" fill="url(#barGrad2)" opacity="0.08"/>
-            <rect id="bar2" x="310" width="80" rx="4" fill="url(#barGrad2)" clip-path="url(#bar2Clip)"/>
+            <rect x="267" y="40" width="70" height="220" rx="4" fill="url(#barGrad2)" opacity="0.08"/>
+            <rect id="bar2" x="267" width="70" rx="4" fill="url(#barGrad2)" clip-path="url(#bar2Clip)"/>
 
-            <!-- Bar 3 – Sem 3: 9.73 → h=206.15 -->
-            <rect x="480" y="40" width="80" height="220" rx="4" fill="url(#barGrad3)" opacity="0.08"/>
-            <rect id="bar3" x="480" width="80" rx="4" fill="url(#barGrad3)" clip-path="url(#bar3Clip)"/>
+            <rect x="433" y="40" width="70" height="220" rx="4" fill="url(#barGrad3)" opacity="0.08"/>
+            <rect id="bar3" x="433" width="70" rx="4" fill="url(#barGrad3)" clip-path="url(#bar3Clip)"/>
+            <rect x="600" y="40" width="70" height="220" rx="4" fill="url(#barGrad3)" opacity="0.08"/>
+            <rect id="bar4" x="600" width="70" rx="4" fill="url(#barGrad3)" clip-path="url(#bar4Clip)"/>
 
             <!-- Glow tops (revealed by JS) -->
-            <rect id="glow1" x="140" y="260" width="80" height="3" rx="2" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
-            <rect id="glow2" x="310" y="260" width="80" height="3" rx="2" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
-            <rect id="glow3" x="480" y="260" width="80" height="3" rx="2" fill="#fff3c4" filter="url(#softGlow)" opacity="0"/>
+            <rect id="glow1" x="100" y="260" width="70" height="3" rx="2" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <rect id="glow2" x="267" y="260" width="70" height="3" rx="2" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <rect id="glow3" x="433" y="260" width="70" height="3" rx="2" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <rect id="glow4" x="600" y="260" width="70" height="3" rx="2" fill="#fff3c4" filter="url(#softGlow)" opacity="0"/>
 
             <!-- Trend line (drawn by JS) -->
             <polyline id="trendLine" points="" fill="none" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
             <!-- Trend dots -->
-            <circle id="dot1" cx="180" cy="260" r="5" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
-            <circle id="dot2" cx="350" cy="260" r="5" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
-            <circle id="dot3" cx="520" cy="260" r="7" fill="#fff3c4" filter="url(#softGlow)" opacity="0"/>
+            <circle id="dot1" cx="135" cy="260" r="5" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <circle id="dot2" cx="302" cy="260" r="5" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <circle id="dot3" cx="468" cy="260" r="5" fill="#e8c97e" filter="url(#glowFilter)" opacity="0"/>
+            <circle id="dot4" cx="635" cy="260" r="7" fill="#fff3c4" filter="url(#softGlow)" opacity="0"/>
 
             <!-- Value labels (set by JS) -->
-            <text id="val1" x="180" y="40" text-anchor="middle" fill="#e8c97e" font-family="Bebas Neue,sans-serif" font-size="20" opacity="0">7.76</text>
-            <text id="val2" x="350" y="40" text-anchor="middle" fill="#e8c97e" font-family="Bebas Neue,sans-serif" font-size="20" opacity="0">8.18</text>
-            <text id="val3" x="520" y="40" text-anchor="middle" fill="#fff3c4" font-family="Bebas Neue,sans-serif" font-size="24" opacity="0">9.73</text>
+            <text id="val1" x="135" y="40" text-anchor="middle" fill="#e8c97e" font-family="Bebas Neue,sans-serif" font-size="20" opacity="0">7.76</text>
+            <text id="val2" x="302" y="40" text-anchor="middle" fill="#e8c97e" font-family="Bebas Neue,sans-serif" font-size="20" opacity="0">8.18</text>
+            <text id="val3" x="468" y="40" text-anchor="middle" fill="#e8c97e" font-family="Bebas Neue,sans-serif" font-size="20" opacity="0">9.73</text>
+            <text id="val4" x="635" y="40" text-anchor="middle" fill="#fff3c4" font-family="Bebas Neue,sans-serif" font-size="24" opacity="0">9.74</text>
 
             <!-- X-axis labels -->
-            <text x="180" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 1</text>
-            <text x="350" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 2</text>
-            <text x="520" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 3</text>
+            <text x="135" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 1</text>
+            <text x="302" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 2</text>
+            <text x="468" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 3</text>
+            <text x="635" y="285" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Space Mono,monospace" font-size="11">Semester 4</text>
 
             <!-- Trend badge -->
-            <rect id="trendBadge" x="540" y="44" width="90" height="24" rx="12" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.25)" stroke-width="1" opacity="0"/>
-            <text id="trendText" x="585" y="60" text-anchor="middle" fill="#4ade80" font-family="Space Mono,monospace" font-size="9" opacity="0">↗ +1.97 CGPA</text>
+            <rect id="trendBadge" x="500" y="82" width="100" height="24" rx="12" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.25)" stroke-width="1" opacity="0"/>
+            <text id="trendText" x="550" y="98" text-anchor="middle" fill="#4ade80" font-family="Space Mono,monospace" font-size="9" opacity="0">↗ +1.98 SGPI</text>
           </svg>
         </div>
 
@@ -450,8 +455,12 @@
             <span class="csp-val">8.18</span>
           </div>
           <div class="cgpa-stat-pill best">
-            <span class="csp-label">Sem 3 ★</span>
+            <span class="csp-label">Sem 3</span>
             <span class="csp-val">9.73</span>
+          </div>
+          <div class="cgpa-stat-pill best">
+            <span class="csp-label">Sem 4 ★</span>
+            <span class="csp-val">9.74</span>
           </div>
         </div>
       </div>
@@ -650,7 +659,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span class="footer-name">Anushka Waghmode</span>
-      <span class="footer-copy">© 2025 · Built with ♥ in Mumbai</span>
+  
       <span class="footer-back"><a href="#home">Back to top ↑</a></span>
     </div>
   </footer>

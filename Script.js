@@ -179,9 +179,10 @@ function animateCgpaGraph() {
   const MAX_CGPA = 10;
 
   const data = [
-    { cgpa: 7.76, clipId: 'bar1ClipRect', glowId: 'glow1', dotId: 'dot1', valId: 'val1', cx: 180 },
-    { cgpa: 8.23, clipId: 'bar2ClipRect', glowId: 'glow2', dotId: 'dot2', valId: 'val2', cx: 350 },
-    { cgpa: 9.73, clipId: 'bar3ClipRect', glowId: 'glow3', dotId: 'dot3', valId: 'val3', cx: 520 },
+    { cgpa: 7.76, clipId: 'bar1ClipRect', glowId: 'glow1', dotId: 'dot1', valId: 'val1', cx: 135 },
+    { cgpa: 8.23, clipId: 'bar2ClipRect', glowId: 'glow2', dotId: 'dot2', valId: 'val2', cx: 302 },
+    { cgpa: 9.73, clipId: 'bar3ClipRect', glowId: 'glow3', dotId: 'dot3', valId: 'val3', cx: 468 },
+    { cgpa: 9.74, clipId: 'bar4ClipRect', glowId: 'glow4', dotId: 'dot4', valId: 'val4', cx: 635 },
   ];
 
   data.forEach(d => {
@@ -303,7 +304,8 @@ if (!supportsHover) {
   projectItems.forEach(item => {
     const card = previewMap[item.dataset.project];
     const link = card ? card.querySelector('.preview-btn') : null;
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (event) => {
+      if (event.target.closest('.project-arrow-link')) return;
       if (link && link.href) window.open(link.href, '_blank', 'noopener');
     });
   });
